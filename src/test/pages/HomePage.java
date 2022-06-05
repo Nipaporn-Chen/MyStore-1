@@ -41,4 +41,9 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//a[@title='About us']")
     public WebElement siteMap;
+
+    @FindBy(className = "login")
+    public WebElement signinBtn;
+
+
 }

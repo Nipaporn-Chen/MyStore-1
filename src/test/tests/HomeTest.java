@@ -10,9 +10,7 @@ public class HomeTest extends BaseTest {
     HomePage homePage;
 
     @BeforeMethod
-    public void localSetUp(){
-        homePage = new HomePage(getDriver());
-    }
+    public void localSetUp(){homePage = new HomePage(getDriver());}
 
     @Test(testName = "Verify information section is displayed and clickable - Specials")
     public void test01(){
@@ -60,6 +58,11 @@ public class HomeTest extends BaseTest {
     public void test08(){
 
         Assert.assertTrue(homePage.siteMap.isEnabled());
+    }
+    @Test(testName = "verify buttons on personal page", description = "order history and details")
+    public void test09(){
+        homePage.click(homePage.signinBtn);
+
     }
 
 }
