@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
+import utils.SeleniumUtils;
 
 public class HomeTest extends BaseTest {
     HomePage homePage;
@@ -60,6 +61,21 @@ public class HomeTest extends BaseTest {
     public void test08(){
 
         Assert.assertTrue(homePage.siteMap.isEnabled());
+    }
+
+    @Test(testName = "AUT-5: Test social media buttons - Facebook")
+    public void testAUT0501() throws InterruptedException {
+        homePage.click(homePage.facebookBtn);
+        String actual = SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
+        Assert.assertEquals(actual, "Selenium Framework");
+    }
+
+    @Test(testName = "AUT-5: Test Follow us social media buttons - GooglePlus")
+    public void testAUT0504(){
+        homePage.click(homePage.googlePlusBtn);
+        String actual = SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
+        //Assert.assertEquals(actual, "Sign in - Google Accounts");
+        Assert.assertEquals(actual, "Google+");
     }
 
 }
