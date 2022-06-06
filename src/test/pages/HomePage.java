@@ -42,8 +42,19 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[@title='About us']")
     public WebElement siteMap;
 
+    @FindBy(xpath = "//li[@class='facebook']//a")
+    public WebElement facebookBtn;
+
+    @FindBy(xpath = "//li[@class='twitter']//a")
+    public WebElement twitterBtn;
+
+    @FindBy(xpath = "//li[@class='youtube']//a")
+    public WebElement youtubeBtn;
+
+    @FindBy(xpath = "//li[@class='google-plus']//a")
+    public WebElement googlePlusBtn;
+
     @FindBy(className = "login")
     public WebElement signinBtn;
-
 
 }

@@ -24,12 +24,14 @@ public class AccountPageTest extends BaseTest {
     @Test(testName = "verify order history button")
     public void test01() throws InterruptedException {
         homePage.click(homePage.signinBtn);
+
         basePage.sleep(2000L);
         homePage.waitForElementVisibility(loginPage.emailField);
+
         loginPage.sendKeys(loginPage.emailField, "test1111@test1111.com");
-        homePage.waitForElementVisibility(loginPage.passwordField);
         loginPage.sendKeys(loginPage.passwordField, "qwerty123");
         loginPage.click(loginPage.signinBtn);
+
         WebElement[] btns = {accountPage.orderHistoryAndDetails, accountPage.myCreditSlips, accountPage.myAddresses, accountPage.myPersonalInformation, accountPage.myWishList};
         for (WebElement btn : btns) {
             Assert.assertTrue(btn.isEnabled());
