@@ -62,4 +62,5 @@ public class HomeTest extends BaseTest {
         Assert.assertTrue(homePage.siteMap.isEnabled());
     }
 
+
 }
