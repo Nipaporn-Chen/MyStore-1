@@ -21,7 +21,7 @@ public class AccountPageTest extends BaseTest {
     public void localSetUp(){
         homePage = new HomePage(getDriver());
     }
-    @Test(testName = "verify order history button")
+    @Test(testName = "us-8", description = "locating buttons on my personal page")
     public void test01() throws InterruptedException {
         homePage.click(homePage.signinBtn);
 
