@@ -54,4 +54,7 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//li[@class='google-plus']//a")
     public WebElement googlePlusBtn;
 
+    @FindBy(className = "login")
+    public WebElement signinBtn;
+
 }

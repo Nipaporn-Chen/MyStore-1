@@ -63,7 +63,7 @@ public class BaseTest {
             default:
                 System.out.println("Wrong browser name was entered");
         }
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
 
