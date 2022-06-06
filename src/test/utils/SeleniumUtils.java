@@ -23,22 +23,4 @@ public class SeleniumUtils {
         driver.switchTo().window(currentWindowID);
         return title;
     }
-
-    public static String switchToWindowAndVerifyUrl(WebDriver driver, ExtentManager extentManager){
-        String currentWindowID = driver.getWindowHandle();
-        String url = "";
-
-        Set<String> allWindowIDs = driver.getWindowHandles();
-        for(String each: allWindowIDs){
-            if (!each.equals(currentWindowID)){
-                driver.switchTo().window(each);
-                url = driver.getCurrentUrl();
-                extentManager.logScreenshot();
-                driver.close();
-            }
-        }
-
-        driver.switchTo().window(currentWindowID);
-        return url;
-    }
 }

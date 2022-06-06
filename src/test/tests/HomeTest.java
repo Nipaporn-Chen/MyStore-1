@@ -1,12 +1,10 @@
 package tests;
 
-import base.BasePage;
 import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
-import utils.SeleniumUtils;
 
 public class HomeTest extends BaseTest {
     HomePage homePage;
@@ -62,35 +60,6 @@ public class HomeTest extends BaseTest {
     public void test08(){
 
         Assert.assertTrue(homePage.siteMap.isEnabled());
-    }
-
-    @Test(testName = "AUT-5: Test social media icon - Facebook")
-    public void testAUT0501() throws InterruptedException {
-        homePage.click(homePage.facebookBtn);
-        String actual = SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
-        Assert.assertEquals(actual, "Selenium Framework");
-    }
-
-    @Test(testName = "AUT-5: Test social media icon - Twitter")
-    public void testAUT0502(){
-        homePage.click(homePage.twitterBtn);
-        String actual = SeleniumUtils.switchToWindowAndVerifyUrl(getDriver(), extentManager);
-        Assert.assertTrue(actual.contains("twitter"));
-    }
-
-    @Test(testName = "AUT-5: Test social media icon - Youtube")
-    public void testAUT0503(){
-        homePage.click(homePage.youtubeBtn);
-        String actual = SeleniumUtils.switchToWindowAndVerifyUrl(getDriver(), extentManager);
-        Assert.assertTrue(actual.contains("youtube"));
-    }
-
-    @Test(testName = "AUT-5: Test social media icon - GooglePlus")
-    public void testAUT0504(){
-        homePage.click(homePage.googlePlusBtn);
-        String actual = SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
-        // Assert.assertEquals(actual, "Sign in - Google Accounts");
-        Assert.assertEquals(actual, "Google+");
     }
 
 }
