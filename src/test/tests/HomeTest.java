@@ -1,5 +1,6 @@
 package tests;
 
+import base.BasePage;
 import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -68,6 +69,13 @@ public class HomeTest extends BaseTest {
         homePage.click(homePage.facebookBtn);
         String actual = SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
         Assert.assertEquals(actual, "Selenium Framework");
+    }
+
+    @Test(testName = "AUT-5: Test Follow us social media buttons - Twitter")
+    public void testAUT0502(){
+        homePage.click(homePage.twitterBtn);
+        String actual = SeleniumUtils.switchToWindowAndVerifyUrl(getDriver(), extentManager);
+        Assert.assertTrue(actual.contains("twitter"));
     }
 
     @Test(testName = "AUT-5: Test Follow us social media buttons - GooglePlus")
