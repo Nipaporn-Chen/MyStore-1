@@ -1,8 +1,7 @@
 package tests;
 
-import base.BasePage;
+
 import base.BaseTest;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -23,15 +22,18 @@ public class AccountPageTest extends BaseTest {
         homePage = new HomePage(getDriver());
         loginPage = new LoginPage(getDriver());
         accountPage = new AccountPage(getDriver());
+        homePage.click(homePage.signinBtn);
     }
 
 
     @Test(testName = "us-8", description = "locating buttons on my personal page")
     public void test01() {
-        homePage.click(homePage.signinBtn);
+
+
         loginPage.sendKeys(loginPage.emailField, "test1111@test1111.com");
         loginPage.sendKeys(loginPage.passwordField, "qwerty123");
         loginPage.click(loginPage.submitBtn);
+
         WebElement[] btns = {accountPage.orderHistoryAndDetails, accountPage.myCreditSlips, accountPage.myAddresses, accountPage.myPersonalInformation, accountPage.myWishList};
         for (WebElement btn : btns) {
             Assert.assertTrue(btn.isEnabled());
