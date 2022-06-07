@@ -68,13 +68,13 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//*[@title='View my shopping cart']")
     public WebElement shoppingCart;
 
-    @FindBy(className = "//*[@class='price cart_block_total ajax_block_cart_total']")
+    @FindBy(id = "total_price")
     public WebElement total;
 
     @FindBy(className = "/*[@class='price']")
     public List<WebElement> productPrice;
 
-    @FindBy(className = "//*[@class='price cart_block_shipping_cost ajax_cart_shipping_cost']")
+    @FindBy(id = "total_shipping")
     public WebElement shippingCost;
 
     @FindBy(xpath = "//*[@class='ajax_block_product col-xs-12 col-sm-4 col-md-3 first-in-line first-item-of-tablet-line first-item-of-mobile-line']")
@@ -91,5 +91,13 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//*[@title='Continue shopping']")
     public WebElement continueShopBtn;
+
+    @FindBy(id = "total_product_price_1_1_0")
+    public WebElement priceItem1;
+
+    @FindBy(id = "total_product_price_4_16_0")
+    public WebElement priceItem2;
+
+
 
 }
