@@ -43,7 +43,7 @@ public class ShoppingCartTest extends BaseTest {
         System.out.println(item1CostNum);
 
         String item2Cost = homePage.priceItem2.getText();
-        String item2CostTrim = item1Cost.substring(1);
+        String item2CostTrim = item2Cost.substring(1);
         double item2CostNum = Double.parseDouble(item2CostTrim);
         System.out.println(item2CostNum);
 
