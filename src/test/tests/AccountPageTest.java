@@ -20,17 +20,18 @@ public class AccountPageTest extends BaseTest {
     @BeforeMethod
     public void localSetUp(){
         homePage = new HomePage(getDriver());
+        loginPage = new LoginPage(getDriver());
+        accountPage = new AccountPage(getDriver());
     }
     @Test(testName = "us-8", description = "locating buttons on my personal page")
     public void test01() throws InterruptedException {
         homePage.click(homePage.signinBtn);
 
-        basePage.sleep(2000L);
         homePage.waitForElementVisibility(loginPage.emailField);
 
         loginPage.sendKeys(loginPage.emailField, "test1111@test1111.com");
         loginPage.sendKeys(loginPage.passwordField, "qwerty123");
-        loginPage.click(loginPage.signinBtn);
+        loginPage.click(loginPage.submitBtn);
 
         WebElement[] btns = {accountPage.orderHistoryAndDetails, accountPage.myCreditSlips, accountPage.myAddresses, accountPage.myPersonalInformation, accountPage.myWishList};
         for (WebElement btn : btns) {
