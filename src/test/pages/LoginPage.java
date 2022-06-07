@@ -14,12 +14,12 @@ public class LoginPage extends BasePage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-    @FindBy(xpath = "//input[@id='email']")
+    @FindBy(name = "email")
     public WebElement emailField;
 
-    @FindBy(xpath = "//input[@id='passwd']")
+    @FindBy(name = "passwd")
     public WebElement passwordField;
 
     @FindBy(xpath = "//button[@id='SubmitLogin']")
-    public WebElement signinBtn;
+    public WebElement submitBtn;
 }
