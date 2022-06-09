@@ -6,10 +6,12 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
+import pages.LoginPage;
 import utils.SeleniumUtils;
 
 public class HomeTest extends BaseTest {
     HomePage homePage;
+    LoginPage loginPage;
 
     @BeforeMethod
     public void localSetUp(){homePage = new HomePage(getDriver());}
@@ -94,6 +96,13 @@ public class HomeTest extends BaseTest {
         String actual = SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
         // Assert.assertEquals(actual, "Sign in - Google Accounts");
         Assert.assertEquals(actual, "Google+");
+    }
+    @Test(testName = "us-8", description = "account page button is ebabled")
+    public void test10() {
+        homePage.click(homePage.signinBtn);
+        loginPage.sendKeys(loginPage.emailField, "test1111test1111.com");
+        loginPage.sendKeys(loginPage.passwordField, "qwerty123");
+        loginPage.click(homePage.signinBtn);
     }
 
 }
