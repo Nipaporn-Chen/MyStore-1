@@ -33,7 +33,6 @@ public class AccountPageTest extends BaseTest {
         loginPage.sendKeys(loginPage.emailField, "test1111@test1111.com");
         loginPage.sendKeys(loginPage.passwordField, "qwerty123");
         loginPage.click(loginPage.submitBtn);
-
         WebElement[] btns = {accountPage.orderHistoryAndDetails, accountPage.myCreditSlips, accountPage.myAddresses, accountPage.myPersonalInformation, accountPage.myWishList};
         for (WebElement btn : btns) {
             Assert.assertTrue(btn.isEnabled());
